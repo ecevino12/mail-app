@@ -1,0 +1,11 @@
+.gmail-header {
+    padding: 10px 25px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+    font-family: 'roboto', sans-serif;
+    color: #ed402f;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    margin-left: -90px;
+}

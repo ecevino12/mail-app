@@ -1,0 +1,11 @@
+
+.create-user-con {
+    background-color: hsl(0, 0%, 95%);
+    padding: 40px 50px;
+    margin-top: 55px;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    text-align: center
+}
