@@ -78,14 +78,15 @@ class CreateUser extends Component {
                     required/>
                 </div>
                 <div className="form-group">
-                  <label for="First Name">Mobile Number</label>
+                  <label for="First Name">Mobile Number *</label>
                   <input
                     type="text"
                     name="mobileNumber"
                     value={number}
                     className="form-control"
                     onChange={this.handleChange}
-                    id="mobileNumber"/>
+                    id="mobileNumber"
+                    required/>
                 </div>
               </div>
               <div className="row">
