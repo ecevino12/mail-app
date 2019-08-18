@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mail/static/css/main.aa69f033.chunk.css",
+    "main.js": "/mail/static/js/main.2c0d0c2d.chunk.js",
+    "main.js.map": "/mail/static/js/main.2c0d0c2d.chunk.js.map",
+    "runtime~main.js": "/mail/static/js/runtime~main.5cf8ed88.js",
+    "runtime~main.js.map": "/mail/static/js/runtime~main.5cf8ed88.js.map",
+    "static/js/2.081521c1.chunk.js": "/mail/static/js/2.081521c1.chunk.js",
+    "static/js/2.081521c1.chunk.js.map": "/mail/static/js/2.081521c1.chunk.js.map",
+    "index.html": "/mail/index.html",
+    "precache-manifest.5e43387ce7a3bb50626d957e1cbe14b6.js": "/mail/precache-manifest.5e43387ce7a3bb50626d957e1cbe14b6.js",
+    "service-worker.js": "/mail/service-worker.js",
+    "static/css/main.aa69f033.chunk.css.map": "/mail/static/css/main.aa69f033.chunk.css.map"
+  }
+}
