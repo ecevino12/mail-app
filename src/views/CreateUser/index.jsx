@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {db} from "../../firebase";
+import { loadState, saveState } from '../../store/localStoreage'
 import './index.css';
 
 class CreateUser extends Component {
@@ -15,24 +15,23 @@ class CreateUser extends Component {
     this.setState({[name]: value});
   };
 
+
   handleFormSubmit = (e) => {
     e.preventDefault();
     const data = {
       ...this.state,
       uid: new Date().getTime()
     };
-    db
-      .collection("users")
-      .doc(data.uid.toString())
-      .set(data)
-      .then(() => {
-        console.log("A new user has been added", "Success");
-        window.location = "/";
-      })
-      .catch(error => {
-        console.log(error.message, "Create user failed");
+    try {
+      // const serializedState = JSON.stringify(data)
+      const a = JSON.parse(localStorage.getItem('state'));
+      // a.push(data);
+      console.log(a);
+      localStorage.setItem('state', JSON.stringify(a))
+    } catch(error) {
+      console.log(error.message, "Create user failed");
         this.setState({isSubmitting: false});
-      });
+    }
   };
 
   render() {
@@ -97,9 +96,6 @@ class CreateUser extends Component {
                   </div>
                 </div>
               </div>
-            
-
-
           </div>
           <div class="add-btn">
           <button type="submit" className="btn btn-primary">Add</button>
@@ -109,5 +105,6 @@ class CreateUser extends Component {
     )
   }
 }
+
 
 export default CreateUser;

@@ -4,7 +4,6 @@ import GoogleLogo from '../../assets/google_logo.png'
 import User from '../../assets/user.png'
 
 import './Header.css'
-import {db} from "../../firebase";
 
 class Header extends Component {
   constructor(props) {
@@ -14,20 +13,16 @@ class Header extends Component {
     };
   }
   componentDidMount() {
-    db
-      .collection("users")
-      .get()
-      .then(querySnapshot => {
-        const data = querySnapshot
-          .docs
-          .map(doc => doc.data());
-        console.log(data);
-        this.setState({users: data});
-      });
+    localStorage.getItem('state') && this.setState({
+      users: JSON.parse(localStorage.getItem('state'))
+      
+    })
+
   }
 
   render() {
     const {users} = this.state;
+    console.log('users:', users);
 
     return (
       <header>
@@ -63,11 +58,12 @@ class Header extends Component {
                   User <img src={User} alt="google logo" width="32"/>
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {users && users.map(user => {
+                  {users.length > 0 && users.map(user => {
                     return (
                       <a className="dropdown-item">{user.firstName}</a>
                     )
-                  })}
+                  })
+                  }
                 </div>
               </li>
             </ul>
